@@ -129,36 +129,36 @@
 		}
 	});
 
-	// Feedback Carousel
-	var $imagesSlider = $(".feedback-slides .client-feedback>div"),
-	$thumbnailsSlider = $(".client-thumbnails>div");
-	// images options
-	$imagesSlider.slick({
-		speed: 300,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		cssEase: 'linear',
-		fade: true,
-		autoplay: true,
-		draggable: true,
-		asNavFor: ".client-thumbnails>div",
-		prevArrow: '.client-feedback .prev-arrow',
-		nextArrow: '.client-feedback .next-arrow'
-	});
-	// Thumbnails options
-	$thumbnailsSlider.slick({
-		speed: 300,
-		slidesToShow: 5,
-		slidesToScroll: 1,
-		cssEase: 'linear',
-		autoplay: true,
-		centerMode: true,
-		draggable: false,
-		focusOnSelect: true,
-		asNavFor: ".feedback-slides .client-feedback>div",
-		prevArrow: '.client-thumbnails .prev-arrow',
-		nextArrow: '.client-thumbnails .next-arrow',
-	});
+	// // Feedback Carousel
+	// var $imagesSlider = $(".feedback-slides .client-feedback>div"),
+	// $thumbnailsSlider = $(".client-thumbnails>div");
+	// // images options
+	// $imagesSlider.slick({
+	// 	speed: 300,
+	// 	slidesToShow: 1,
+	// 	slidesToScroll: 1,
+	// 	cssEase: 'linear',
+	// 	fade: true,
+	// 	autoplay: true,
+	// 	draggable: true,
+	// 	asNavFor: ".client-thumbnails>div",
+	// 	prevArrow: '.client-feedback .prev-arrow',
+	// 	nextArrow: '.client-feedback .next-arrow'
+	// });
+	// // Thumbnails options
+	// $thumbnailsSlider.slick({
+	// 	speed: 300,
+	// 	slidesToShow: 5,
+	// 	slidesToScroll: 1,
+	// 	cssEase: 'linear',
+	// 	autoplay: true,
+	// 	centerMode: true,
+	// 	draggable: false,
+	// 	focusOnSelect: true,
+	// 	asNavFor: ".feedback-slides .client-feedback>div",
+	// 	prevArrow: '.client-thumbnails .prev-arrow',
+	// 	nextArrow: '.client-thumbnails .next-arrow',
+	// });
 	
 	// Go to Top
 	$(function(){
