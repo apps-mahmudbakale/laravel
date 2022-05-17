@@ -33,7 +33,6 @@
 			<div class="shape8 rotateme"><img src="assets/img/shape2.svg" alt="shape"></div>
 		</div>
 		<!-- End Main Banner -->
-
 		<!-- Start Boxes Area -->
 		<div class="boxes-area">
 			<div class="container">
@@ -81,7 +80,20 @@
 			</div>
 		</div>
 		<!-- End Boxes Area -->
-
+		<!-- Start Tracker Live Commodities Data -->
+			<div class="container">
+				<div class="ticker-wrapper-h">
+					<div class="heading">Live Data</div>
+					
+					<ul class="news-ticker-h">
+						<li class="font-light"><span class="mx-2">Raw Cashew Nuts</span><span class="font-bold mx-2">₦0</span><span class="text-danger">0.00%</span></li>
+						<li><a href="">Why do we use it?</a></li>
+						<li><a href="">Where does it come from?</a></li>
+						<li><a href="">Where can I get some?</a></li>
+					</ul>
+				</div>
+			</div>
+		<!-- End Tracker Live Commodities Data -->
 		<!-- Start Features Area -->
 		<div class="features-area ptb-80 bg-f7fafd">
 			<div class="container">
