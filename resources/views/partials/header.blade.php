@@ -26,22 +26,14 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav nav ml-auto">
                         <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About <i data-feather="chevron-down"></i></a>
-                            <ul class="dropdown_menu">
-                                <li class="nav-item"><a href="about-1.html" class="nav-link">About Style 1</a></li>
-                                
-                                <li class="nav-item"><a href="about-2.html" class="nav-link">About Style 2</a></li>
-                                
-                                <li class="nav-item"><a href="about-3.html" class="nav-link">About Style 3</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Updates</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="others-option">
-                    <a href="cart.html" class="cart-wrapper-btn"><i data-feather="shopping-cart"></i><span>0</span></a>
-                    <a href="contact.html" class="btn btn-light">Support</a>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
             </nav>
@@ -61,8 +53,6 @@
             <div class="container">
                 <div class="option-inner">
                     <div class="others-option">
-                        <a href="cart.html" class="cart-wrapper-btn"><i data-feather="shopping-cart"></i><span>0</span></a>
-                        <a href="contact.html" class="btn btn-light">Support</a>
                         <a href="login.html" class="btn btn-primary">Login</a>
                     </div>
                 </div>
