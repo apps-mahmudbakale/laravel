@@ -15,7 +15,7 @@
 							</div>
 
 							<div class="col-lg-6 offset-lg-1">
-								<img src="assets/img/banner-image/man.png" class="wow fadeInDown" data-wow-delay="0.6s" alt="man">
+								{{-- <img src="assets/img/banner-image/man.png" class="wow fadeInDown" data-wow-delay="0.6s" alt="man"> --}}
 								
 							</div>
 						</div>
@@ -85,11 +85,8 @@
 				<div class="ticker-wrapper-h">
 					<div class="heading">Live Data</div>
 					
-					<ul class="news-ticker-h">
-						<li class="font-light"><span class="mx-2">Raw Cashew Nuts</span><span class="font-bold mx-2">₦0</span><span class="text-danger">0.00%</span></li>
-						<li><a href="">Why do we use it?</a></li>
-						<li><a href="">Where does it come from?</a></li>
-						<li><a href="">Where can I get some?</a></li>
+					<ul class="news-ticker-h" id="live-data">
+						
 					</ul>
 				</div>
 			</div>

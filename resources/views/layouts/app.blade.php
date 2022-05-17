@@ -31,11 +31,24 @@
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
+        let html ='';
             fetch('https://comxapp.afexnigeria.com/api/security-price/live/site?format=json')
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.data);
+                let datas = data.data;
+                datas.forEach(element => {
+                    if(element.type === 'Sell'){
+                        html +=`<li class="font-light"><span class="mx-2">${element.commodity_code}</span><span class="font-bold mx-2">${element.marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'NGN' })}</span><span class="text-danger">${element.changePercentage}%</span></li>`;
+                    } else{
+                        html +=`<li class="font-light"><span class="mx-2">${element.commodity_code}</span><span class="font-bold mx-2">${element.marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'NGN' })}</span><span class="text-success">${element.changePercentage}%</span></li>`;
+                    }
+                   
+                });
+                // console.log(html);
+                document.getElementById('live-data').innerHTML = html;
             })
+            
     </script>
 </body>
 
