@@ -81,7 +81,7 @@
 		</div>
 		<!-- End Boxes Area -->
 		<!-- Start Tracker Live Commodities Data -->
-			<div class="container">
+			<div class="container p-4">
 				<div class="ticker-wrapper-h">
 					<div class="heading">Live Data</div>
 					

@@ -31,12 +31,11 @@
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-            fetch('https://comxapp.afexnigeria.com/api/security-price/live/site/',  {method: 'GET', mode: 'no-cors'})
-                .then((response) => {
-                })
-                .then((data) => {
-                    console.log(data);
-                })
+            fetch('https://comxapp.afexnigeria.com/api/security-price/live/site?format=json')
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data.data);
+            })
     </script>
 </body>
 
