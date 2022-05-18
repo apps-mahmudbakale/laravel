@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav nav ml-auto">
                         <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About Us</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Updates</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>

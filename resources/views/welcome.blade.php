@@ -15,7 +15,7 @@
 							</div>
 
 							<div class="col-lg-6 offset-lg-1">
-								<img src="{{ asset('assets/img/prymid.png') }}" class="wow fadeInDown" data-wow-delay="0.6s" alt="man">
+								<img src="{{ asset('img/pyramid.png') }}" class="wow fadeInDown" data-wow-delay="0.6s" alt="man">
 								
 							</div>
 						</div>
@@ -37,43 +37,33 @@
 		<div class="boxes-area">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-box">
 							<div class="icon">
-								<i data-feather="server"></i>
+								<i data-feather="activity"></i>
 							</div>
-							<h3>Zero Configuration</h3>
-							<p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna.</p>
+							<h3>RimaEx Trading</h3>
+							<p>Creating an inclusive, sustainable and efficient food system</p>
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-box bg-f78acb">
 							<div class="icon">
-								<i data-feather="code"></i>
+								<i data-feather="command"></i>
 							</div>
-							<h3>Code Security</h3>
-							<p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna.</p>
+							<h3>RimaEx Commodities Exchange</h3>
+							<p>Building an inclusive and efficient market system for commodities exchange</p>
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-box bg-c679e3">
 							<div class="icon">
-								<i data-feather="users"></i>
+								<i data-feather="link"></i>
 							</div>
-							<h3>Team Management</h3>
-							<p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna.</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-box bg-eb6b3d">
-							<div class="icon">
-								<i data-feather="git-branch"></i>
-							</div>
-							<h3>Access Controlled</h3>
-							<p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna.</p>
+							<h3>RimaEx Investment</h3>
+							<p>Facilitating capital flows to grow inclusive commodity value chains in Agricultural Market</p>
 						</div>
 					</div>
 				</div>
@@ -95,9 +85,10 @@
 		<div class="features-area ptb-80 bg-f7fafd">
 			<div class="container">
 				<div class="section-title">
-					<h2>Our Features</h2>
+					<h2>Our Platforms</h2>
 					<div class="bar"></div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p style="font-size: 16px;">Our solutions deliver impressive wins in trading, financing and market system development for Agricultural commodities market.</p>
+					<p style="font-size: 16px;">We provide a platform that supports wealth creation, risk management and efficient markets</p>
 				</div>
 
 				<div class="row">

@@ -60,7 +60,7 @@
 
 					<div class="col-lg-12 col-md-12">
 						<div class="copyright-area">
-							<p>Copyright @<script data-cfasync="false" src="https://templates.envytheme.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> StartP. All Rights Reserved by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
+							<p>Copyright @<script data-cfasync="false" src=""></script><script>document.write(new Date().getFullYear())</script> StartP. All Rights Reserved by <a href="https://cynoxit.com.ng" target="_blank">Cynox IT Ltd.</a></p>
 						</div>
 					</div>
 				</div>
