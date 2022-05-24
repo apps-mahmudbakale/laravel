@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Primary Meta Tags -->
@@ -10,7 +11,8 @@
     <meta name="description" content="Agricultural Commodity Exchange">
     <meta name="keywords" content="Commodity Exchange, Rima, Agricultural Exchange, Mahmud Bakale" />
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    <link rel="shortcut icon" href="{{ asset('img/favicon.png')}}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+    @livewireStyles
 </head>
 
 <body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
@@ -18,10 +20,12 @@
         @include('partials.sidebar')
         <div class="main">
             @include('partials.menu')
-        @yield('content')
-        @include('partials.foot')
+            @yield('content')
+            @include('partials.foot')
         </div>
     </div>
     <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
+    @livewireScripts
 </body>
+
 </html>
