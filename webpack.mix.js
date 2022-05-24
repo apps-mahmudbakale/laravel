@@ -26,6 +26,11 @@ const mix = require('laravel-mix');
     'public/assets/css/dark-color/dark-style.css'
     ], 'public/css/app.css');
 
+
+    mix.styles([
+      'public/css/light.css',
+      ], 'public/css/admin.css');
+
     mix.scripts([
         'public/assets/js/jquery.min.js',
         'public/assets/js/bootstrap.bundle.min.js',
@@ -43,4 +48,8 @@ const mix = require('laravel-mix');
         'public/assets/js/contact-form-script.js',
         'public/assets/js/main.js'
      ], 'public/js/app.js');
+
+    mix.scripts([
+        'public/js/appw.js',
+     ], 'public/js/admin.js');
   

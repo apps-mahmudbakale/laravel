@@ -5,12 +5,12 @@
             <div class="startp-responsive-menu">
                 <div class="logo black-logo">
                     <a href="/">
-                        <img src="assets/img/rimaEx-logo.png" alt="logo">
+                        <img src="{{asset('img/logo-black.png')}}" alt="logo">
                     </a>
                 </div>
                 <div class="logo white-logo">
-                    <a href="index.html">
-                        <img src="assets/img/rimaEx-logo.png" alt="logo">
+                    <a href="/">
+                        <img src="{{ asset('img/logo-white.png') }}" alt="logo">
                     </a>
                 </div>
             </div>
@@ -20,21 +20,21 @@
     <div class="startp-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand black-logo" href="/" style="width: 158px"><img src="assets/img/rimaEx-logo.png" alt="logo"></a>
-                <a class="navbar-brand white-logo" href="/" style="width: 158px"><img src="assets/img/rimaEx-logo.png" alt="logo"></a>
+                <a class="navbar-brand black-logo" href="/" style="width: 158px"><img src="{{asset('img/logo-black.png') }}" alt="logo"></a>
+                <a class="navbar-brand white-logo" href="/" style="width: 158px"><img src="{{ asset('img/logo-white.png')}}" alt="logo"></a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav nav ml-auto">
                         <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
                         <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About Us</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Updates</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Membership</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="others-option">
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <a href="{{route('login')}}" class="btn btn-primary">Login</a>
                 </div>
             </nav>
         </div> 
