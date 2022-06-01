@@ -3,13 +3,11 @@
 	  <!-- Start Page Title -->
 	  <div class="page-title-area">
 		<div class="d-table">
-			<div class="d-table-cell">
+			
 				<div class="container">
-					<h2>About Us</h2>
+					{{-- <h2>About Us</h2> --}}
 				</div>
-			</div>
 		</div>
-		
 		<div class="shape1"><img src="assets/img/shape1.png" alt="shape"></div>
 		<div class="shape2 rotateme"><img src="assets/img/shape2.svg" alt="shape"></div>
 		<div class="shape3"><img src="assets/img/shape3.svg" alt="shape"></div>
@@ -36,19 +34,14 @@
 						<div class="section-title">
 							<h2>About Us</h2>
 							<div class="bar"></div>
-							<p>Lorem ipsum dolor sit amet, con se ctetur adipiscing elit. In sagittis eg esta ante, sed viverra nunc tinci dunt nec elei fend et tiram.</p>
+							<p>Rima Agricultural Commodity Exchange is a structured market place where buyers/sellers can meet with each other to know what they have for sale/purchase, quantity and price. The commodities exchange transactionare governed by rule and regulations for fair and transparent transactions. The exchange is open to all buyers and sellers. All transactions are conducted through Rima Agricultural Commodity Exchange authorised brokers.</p>
 						</div>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis egestas ante, sed viverra nunc tincidunt nec nteger nonsed condimntum elit, sit amet feugiat lorem. Proin tempus sagittis velit vitae scelerisque.</p>
-
-						<p>Lorem ipsum dolor sit amet, con se ctetur adipiscing elit. In sagittis eg esta ante, sed viverra nunc tinci dunt nec elei fend et tiram.</p>
-
-						<p>Business-to-business metrics analytics value proposition funding angel investor entrepreneur alpha ramen equity gamification. Social proof partner network research.</p>
+						<p>Rima Agricultural Commodity Exchange will provide an efficient and transparent Nigerian and regional agricultural commodity exchange supported by a warehouse certification and receipts system to enhance market access, liquidity and credibility in the agricultural commodity market.</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="about-inner-area">
+			{{-- <div class="about-inner-area">
 				<div class="row">
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="about-text">
@@ -71,7 +64,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	<!-- End About Area -->
@@ -309,56 +302,5 @@
 		</div>
 	</div>
 	<!-- End Team Area -->
-	<!-- Start Fun Facts Area -->
-	<div class="funfacts-area ptb-80">
-		<div class="container">
-			<div class="section-title">
-				<h2>We always try to understand users expectation</h2>
-				<div class="bar"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-3 col-md-3 col-6 col-sm-3">
-					<div class="funfact">
-						<h3><span class="odometer" data-count="180">00</span>K</h3>
-						<p>Downloaded</p>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-6 col-sm-3">
-					<div class="funfact">
-						<h3><span class="odometer" data-count="20">00</span>K</h3>
-						<p>Feedback</p>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-6 col-sm-3">
-					<div class="funfact">
-						<h3><span class="odometer" data-count="500">00</span>+</h3>
-						<p>Workers</p>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-6 col-sm-3">
-					<div class="funfact">
-						<h3><span class="odometer" data-count="70">00</span>+</h3>
-						<p>Contributors</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="contact-cta-box">
-				<h3>Have any question about us?</h3>
-				<p>Don't hesitate to contact us</p>
-				<a href="contact.html" class="btn btn-primary">Contact Us</a>
-			</div>
-
-			<div class="map-bg">
-				<img src="assets/img/map.png" alt="map">
-			</div>
-		</div>
-	</div>
-	<!-- End Fun Facts Area -->
 @endsection
       

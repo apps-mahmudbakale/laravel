@@ -28,14 +28,14 @@
                         <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
                         <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About Us</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Updates</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Membership</a></li>
+                        <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Membership</a></li>
                         <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="others-option">
+                {{-- <div class="others-option">
                     <a href="{{route('login')}}" class="btn btn-primary">Login</a>
-                </div>
+                </div> --}}
             </nav>
         </div> 
     </div>
