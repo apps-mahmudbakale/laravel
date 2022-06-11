@@ -11,6 +11,8 @@
     <meta name="description" content="Agricultural Commodity Exchange">
     <meta name="keywords" content="Commodity Exchange, Rima, Agricultural Exchange, Mahmud Bakale" />
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/quill.snow.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/summernote.min.css') }}">
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
     @livewireStyles
 </head>
@@ -24,8 +26,18 @@
             @include('partials.foot')
         </div>
     </div>
-    <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
+    {{-- <script src="{{asset('js/quill.js')}}"></script> --}}
+    <script src="{{asset('js/summernote.min.js')}}"></script>
     @livewireScripts
+    <script>
+        // var quill = new Quill('#editor', {
+        //   theme: 'snow'
+        // });
+        $(document).ready(function() {
+  $('#summernote').summernote();
+});
+      </script>
 </body>
 
 </html>

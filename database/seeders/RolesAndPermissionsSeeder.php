@@ -35,6 +35,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'roles',
             'brokers',
             'market',
+            'commodities',
+            'update',
+            'orders',
         ];
 
         foreach ($permissions as $permission) {

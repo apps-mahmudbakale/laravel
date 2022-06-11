@@ -10,7 +10,6 @@ class Base extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
-    public $sortBy = 'name';
 
     public $sortDirection = 'asc';
 

@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class Users extends Base
 {
+    public $sortBy = 'name';
     public function render()
     {
 

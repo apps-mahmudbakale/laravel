@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class Roles extends Base
 {
+    public $sortBy = 'name';
     public function render()
     {
         if ($this->search) {

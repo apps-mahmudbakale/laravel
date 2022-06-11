@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MarketController;
+use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\CommodityController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -33,6 +36,9 @@ Route::group(['prefix' => 'app', 'as' => 'app.', 'middleware' => 'auth'], functi
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
+    Route::resource('updates', UpdateController::class);
+    Route::resource('market', MarketController::class);
+    Route::resource('commodities', CommodityController::class);
     Route::resource('settings', SettingController::class);
 });
 

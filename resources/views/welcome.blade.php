@@ -10,7 +10,7 @@
 							<div class="col-lg-5">
 								<div class="hero-content">
 									<h1>One-Stop Place for your Agricultural Comodities</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+									{{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p> --}}
 								</div>
 							</div>
 
@@ -91,7 +91,7 @@
 					<p style="font-size: 16px;">We provide a platform that supports wealth creation, risk management and efficient markets</p>
 				</div>
 
-				<div class="row">
+				{{-- <div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6">
 						<div class="single-features">
 							<div class="icon">
@@ -157,7 +157,7 @@
 							<p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 		<!-- End Features Area -->

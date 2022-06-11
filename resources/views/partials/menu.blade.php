@@ -2,59 +2,6 @@
     <a class="sidebar-toggle">
 <i class="hamburger align-self-center"></i>
 </a>
-
-    <form class="d-none d-sm-inline-block">
-        <div class="input-group input-group-navbar">
-            <input type="text" class="form-control" placeholder="Search projects…" aria-label="Search">
-            <button class="btn" type="button">
-  <i class="align-middle" data-feather="search"></i>
-</button>
-        </div>
-    </form>
-
-    <ul class="navbar-nav">
-        <li class="nav-item px-2 dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Mega menu
-</a>
-            <div class="dropdown-menu dropdown-menu-start dropdown-mega" aria-labelledby="servicesDropdown">
-                <div class="d-md-flex align-items-start justify-content-start">
-                    <div class="dropdown-mega-list">
-                        <div class="dropdown-header">UI Elements</div>
-                        <a class="dropdown-item" href="#">Alerts</a>
-                        <a class="dropdown-item" href="#">Buttons</a>
-                        <a class="dropdown-item" href="#">Cards</a>
-                        <a class="dropdown-item" href="#">Carousel</a>
-                        <a class="dropdown-item" href="#">General</a>
-                        <a class="dropdown-item" href="#">Grid</a>
-                        <a class="dropdown-item" href="#">Modals</a>
-                        <a class="dropdown-item" href="#">Tabs</a>
-                        <a class="dropdown-item" href="#">Typography</a>
-                    </div>
-                    <div class="dropdown-mega-list">
-                        <div class="dropdown-header">Forms</div>
-                        <a class="dropdown-item" href="#">Layouts</a>
-                        <a class="dropdown-item" href="#">Basic Inputs</a>
-                        <a class="dropdown-item" href="#">Input Groups</a>
-                        <a class="dropdown-item" href="#">Advanced Inputs</a>
-                        <a class="dropdown-item" href="#">Editors</a>
-                        <a class="dropdown-item" href="#">Validation</a>
-                        <a class="dropdown-item" href="#">Wizard</a>
-                    </div>
-                    <div class="dropdown-mega-list">
-                        <div class="dropdown-header">Tables</div>
-                        <a class="dropdown-item" href="#">Basic Tables</a>
-                        <a class="dropdown-item" href="#">Responsive Table</a>
-                        <a class="dropdown-item" href="#">Table with Buttons</a>
-                        <a class="dropdown-item" href="#">Column Search</a>
-                        <a class="dropdown-item" href="#">Muulti Selection</a>
-                        <a class="dropdown-item" href="#">Ajax Sourced Data</a>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-
     <div class="navbar-collapse collapse">
         <ul class="navbar-nav navbar-align">
             <li class="nav-item dropdown">
@@ -190,35 +137,12 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown">
-    <img src="img/flags/us.png" alt="English" />
-  </a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                    <a class="dropdown-item" href="#">
-      <img src="img/flags/us.png" alt="English" width="20" class="align-middle me-1" />
-      <span class="align-middle">English</span>
-    </a>
-                    <a class="dropdown-item" href="#">
-      <img src="img/flags/es.png" alt="Spanish" width="20" class="align-middle me-1" />
-      <span class="align-middle">Spanish</span>
-    </a>
-                    <a class="dropdown-item" href="#">
-      <img src="img/flags/de.png" alt="German" width="20" class="align-middle me-1" />
-      <span class="align-middle">German</span>
-    </a>
-                    <a class="dropdown-item" href="#">
-      <img src="img/flags/nl.png" alt="Dutch" width="20" class="align-middle me-1" />
-      <span class="align-middle">Dutch</span>
-    </a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
                 <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
     <i class="align-middle" data-feather="settings"></i>
   </a>
 
                 <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-    <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded-circle me-1" alt="Chris Wood" /> <span class="text-dark">Chris Wood</span>
+    <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded-circle me-1" alt="{{auth()->user()->name}}" /> <span class="text-dark">{{auth()->user()->name}}</span>
   </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>

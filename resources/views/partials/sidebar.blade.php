@@ -19,8 +19,18 @@
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.users.index')}}">Users</a></li>
                 </ul>
             </li>
-            <li class="sidebar-item {{ request()->routeIs('app.dashboard') ? 'active' : '' }}">
-                <a  href="{{route('app.dashboard')}}" class="sidebar-link">
+            <li class="sidebar-item {{ request()->routeIs('app.udates.*') ? 'active' : '' }}">
+                <a  href="{{route('app.updates.index')}}" class="sidebar-link">
+                    <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Updates</span>
+                </a>
+            </li>
+            <li class="sidebar-item {{ request()->routeIs('app.commodities.*') ? 'active' : '' }}">
+                <a  href="{{route('app.commodities.index')}}" class="sidebar-link">
+                    <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Commodities</span>
+                </a>
+            </li>
+            <li class="sidebar-item {{ request()->routeIs('app.market.*') ? 'active' : '' }}">
+                <a  href="{{route('app.market.index')}}" class="sidebar-link">
                     <i class="align-middle" data-feather="shopping-cart"></i> <span class="align-middle">Market</span>
                 </a>
             </li>
