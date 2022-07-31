@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\DocBlock\Tags\See;
 
 class DashboardController extends Controller
 {
@@ -13,7 +15,7 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'verified']);
     }
 
     /**
@@ -23,6 +25,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $securitiesValues = DB::table('securities')->join('commodities', 'securities.commodity_id', '=', 'commodities.id')->where('securities.user_id', '=', auth()->user()->id)->sum(DB::raw('commodities.current_price * securities.security_qty'));
+
+        return view('dashboard', ['securitiesValues' => $securitiesValues]);
     }
 }

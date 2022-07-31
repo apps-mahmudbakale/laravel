@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('current_price');
+            $table->integer('old_price')->default(0);
             $table->integer('no_of_deals')->default(0);
-            $table->integer('daily_change')->default(0);
-            $table->integer('std_change')->default(0);
+            $table->integer('no_of_buys')->default(0);
+            $table->integer('no_of_sells')->default(0);
             $table->timestamps();
         });
     }

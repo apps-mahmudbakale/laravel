@@ -14,8 +14,9 @@ class Commodities extends Base
             $commodities = Commodity::query()
                 ->where('name', 'like', '%' . $this->search . '%')
                 ->Orwhere('current_price', 'like', '%' . $this->search . '%')
-                ->Orwhere('daily_change', 'like', '%' . $this->search . '%')
-                ->Orwhere('std_change', 'like', '%' . $this->search . '%')
+                ->Orwhere('old_price', 'like', '%' . $this->search . '%')
+                ->Orwhere('no_of_buys', 'like', '%' . $this->search . '%')
+                ->Orwhere('no_of_sells', 'like', '%' . $this->search . '%')
                 ->paginate(10);
 
             return view(

@@ -31,15 +31,15 @@ class CommodityFormRequest extends FormRequest
                 'required',
                 'integer'
             ],
-            'daily_change' => [
+            'old_price' => [
                 'required',
                 'integer'
             ],
 
-            'std_change' => [
-                'required',
-                'integer'
-            ],
+            // 'change' => [
+            //     'required',
+            //     'integer'
+            // ],
 
         ];
     }

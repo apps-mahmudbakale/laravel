@@ -1,6 +1,11 @@
 <!-- Start Footer Area -->
 		<footer class="footer-area bg-f7fafd">
-			<div class="container">
+			<div class="col-lg-12 col-md-12">
+				<div class="copyright-area">
+					<p>Copyright @<script data-cfasync="false" src=""></script><script>document.write(new Date().getFullYear())</script> StartP. All Rights Reserved by <a href="https://cynoxit.com.ng" target="_blank">Cynox IT Ltd.</a></p>
+				</div>
+			</div>
+			{{-- <div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="single-footer-widget">
@@ -64,10 +69,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 
-			<img src="assets/img/map.png" class="map" alt="map">
+			{{-- <img src="assets/img/map.png" class="map" alt="map">
 			<div class="shape1"><img src="assets/img/shape1.png" alt="shape"></div>
-			<div class="shape8 rotateme"><img src="assets/img/shape2.svg" alt="shape"></div>
+			<div class="shape8 rotateme"><img src="assets/img/shape2.svg" alt="shape"></div> --}}
 		</footer>
 		<!-- End Footer Area -->

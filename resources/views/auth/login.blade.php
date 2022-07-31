@@ -6,7 +6,7 @@
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
-                    <h2>Login</h2>
+                    <h2>Sign In To RimaEx</h2>
                 </div>
             </div>
         </div>

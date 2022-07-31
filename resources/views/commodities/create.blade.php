@@ -17,23 +17,18 @@
                                     </div>
                                     <div class="mb-3 col-md-12">
                                         <label class="form-label" for="inputPrice">Current Price</label>
-                                        <input type="number" name="current_price" class="form-control" min="0" step="any" id="inputPrice" placeholder="Current Price">
+                                        <input type="number" name="current_price" class="form-control" min="0" step="0" id="inputPrice" placeholder="Current Price">
                                     </div>
                                     <div class="mb-3 col-md-12">
-                                        <label class="form-label" for="daily_change">Daily Change</label>
-                                        <input type="number" name="daily_change" class="form-control" step=".01" id="daily_change"
-                                            placeholder="Daily Change">
-                                    </div>
-                                    <div class="mb-3 col-md-12">
-                                        <label class="form-label" for="std_change">S.T.D Change</label>
-                                        <input type="number" name="std_change" class="form-control" step=".01" id="std_change"
-                                            placeholder="S.T.D Change">
+                                        <label class="form-label" for="old_price">Old Price</label>
+                                        <input type="number" name="old_price" class="form-control" step="0" id="old_price"
+                                            placeholder="Old Price">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

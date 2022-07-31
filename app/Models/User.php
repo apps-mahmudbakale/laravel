@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
@@ -42,4 +42,30 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function wallets()
+    {
+        return $this->hasMany(Wallet::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function getWalletBalance()
+    {
+        return $this->wallets->sum('cash_balance');
+    }
+
+    public function getWalletAccountNumber()
+    {
+        return $this->wallets->first()->account_number;
+    }
+
+    public function getOrdersCount()
+    {
+        return $this->orders->count();
+    }
+
 }

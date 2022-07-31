@@ -60,7 +60,7 @@ class CommodityController extends Controller
      */
     public function edit(Commodity $commodity)
     {
-        //
+        return view('commodities.edit', compact('commodity'));
     }
 
     /**
@@ -70,9 +70,11 @@ class CommodityController extends Controller
      * @param  \App\Models\Commodity  $commodity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Commodity $commodity)
+    public function update(CommodityFormRequest $request, Commodity $commodity)
     {
-        //
+        $commodity->update($request->all());
+        
+        return redirect()->route('app.commodities.index')->with('success', 'Commodity Updated Successfully');
     }
 
     /**
@@ -83,6 +85,8 @@ class CommodityController extends Controller
      */
     public function destroy(Commodity $commodity)
     {
-        //
+        $commodity->delete();
+        
+        return redirect()->route('app.commodities.index')->with('success', 'Commodity Deleted Successfully');
     }
 }

@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\CommodityController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,7 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 
 /* Route Dashboards */
@@ -39,6 +41,10 @@ Route::group(['prefix' => 'app', 'as' => 'app.', 'middleware' => 'auth'], functi
     Route::resource('updates', UpdateController::class);
     Route::resource('market', MarketController::class);
     Route::resource('commodities', CommodityController::class);
+    Route::resource('portfolio', PortfolioController::class);
+    Route::resource('orders', OrderController::class);
     Route::resource('settings', SettingController::class);
 });
+
+
 

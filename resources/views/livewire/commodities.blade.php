@@ -33,8 +33,7 @@
                         <th>#</th>
                         <th wire:click="sortBy('name')">Name @include('partials._sort-icon', ['field' => 'name'])</th>
                         <th wire:click="sortBy('current_price')">Current Price @include('partials._sort-icon', ['field' => 'current_price'])</th>
-                        <th wire:click="sortBy('daily_change')">Daily Change @include('partials._sort-icon', ['field' => 'daily_change'])</th>
-                        <th wire:click="sortBy('std_change')">S.T.D Change @include('partials._sort-icon', ['field' => 'std_change'])</th>
+                        <th wire:click="sortBy('old_price')">Old Price @include('partials._sort-icon', ['field' => 'old_price'])</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -44,15 +43,12 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $commodity->name }}</td>
-                            <td>{{ $commodity->current_price }}</td>
-                            <td>{{ $commodity->daily_change }}</td>
-                            <td>{{ $commodity->std_change }}</td>
+                            <td>&#8358;{{ number_format($commodity->current_price) }}</td>
+                            <td>&#8358;{{ number_format($commodity->old_price) }}</td>
+                            {{-- <td class="{{$commodity->getCommodityPriceChange() < 0 ? 'text-danger' : 'text-success'}}">{{ $commodity->getCommodityPriceChange() < 0 ? $commodity->getCommodityPriceChangePercentageFormatted() : '+'. $commodity->getCommodityPriceChangePercentageFormatted()}}</td> --}}
                             <td>{{ $commodity->created_at->diffForHumans() }}</td>
                             <td class="btn-group">
-                                <a class="btn btn-success text-white btn-sm" href="">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a class="btn btn-info btn-sm" href="">
+                                <a class="btn btn-info btn-sm" href="{{route('app.commodities.edit', $commodity->id)}}">
                                     <i class="fa fa-edit"></i>
                                 </a>
                                 <a href="" class="btn btn-danger btn-sm"

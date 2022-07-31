@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MarketController;
+use App\Http\Controllers\WalletController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('getPricePerQty', [MarketController::class, 'getPricePerQty']);
+Route::post('FundWallet', [WalletController::class, 'FundWallet']);

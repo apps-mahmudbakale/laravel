@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Users')
+@section('title', 'Market')
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">

@@ -12,7 +12,27 @@ class Commodity extends Model
     protected $fillable = [
         'name',
         'current_price',
-        'daily_change',
-        'std_change',
+        'old_price',
     ];
+
+    public function getCommodityPriceChange()
+    {
+        return $this->current_price - $this->old_price;
+    }
+
+    public function getCommodityPriceChangePercentage()
+    {
+        return ($this->current_price - $this->old_price) / $this->current_price * 100;
+    }
+
+    public function getCommodityPriceChangePercentageFormatted()
+    {
+        return number_format($this->getCommodityPriceChangePercentage(), 2) . '%';
+    }
+
+    public function security(){
+
+        return $this->hasMany(Security::class);
+    } 
+    
 }
