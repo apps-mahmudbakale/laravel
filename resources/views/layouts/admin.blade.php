@@ -20,7 +20,10 @@
 
 <body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
     <div class="wrapper">
+        @if(request()->is('email/verify'))
+        @else
         @include('partials.sidebar')
+        @endif
         <div class="main">
             @include('partials.menu')
             @yield('content')

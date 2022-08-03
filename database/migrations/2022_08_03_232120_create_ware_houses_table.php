@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('commodities', function (Blueprint $table) {
+        Schema::create('ware_houses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('current_price');
-            $table->integer('old_price')->default(0);
-            $table->integer('no_of_deals')->default(0);
-            $table->integer('no_of_buys')->default(0);
-            $table->integer('no_of_sells')->default(0);
-            // $table->foreignId('ware_house_id')->references('id')->on('ware_houses')->onDelete('cascade');
+            $table->string('location');
+            $table->integer('capacity');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commodities');
+        Schema::dropIfExists('ware_houses');
     }
 };
