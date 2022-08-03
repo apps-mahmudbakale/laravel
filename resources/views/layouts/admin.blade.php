@@ -20,7 +20,10 @@
 
 <body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
     <div class="wrapper">
-        @include('partials.sidebar')
+        @if (request()->is('email/verify'))
+        @else
+            @include('partials.sidebar')
+        @endif
         <div class="main">
             @include('partials.menu')
             @yield('content')
@@ -58,7 +61,7 @@
                 key: 'pk_test_30bbe756476a4c8b47a3df7a2201cd711b16ceb1', // Replace with your public key
                 email: '{{ auth()->user()->email }}',
                 amount: document.getElementById('amount').value *
-                100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+                    100, // the amount value is multiplied by 100 to convert to the lowest currency unit
                 currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
                 ref: '' + Math.floor((Math.random() * 1000000000) + 1),
                 callback: function(response) {
