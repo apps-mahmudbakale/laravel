@@ -21,7 +21,6 @@ return new class extends Migration
             $table->integer('no_of_deals')->default(0);
             $table->integer('no_of_buys')->default(0);
             $table->integer('no_of_sells')->default(0);
-            // $table->foreignId('ware_house_id')->references('id')->on('ware_houses')->onDelete('cascade');
             $table->timestamps();
         });
     }
