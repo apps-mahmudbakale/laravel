@@ -31,10 +31,8 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th wire:click="sortBy('firstname')">First Name @include('partials._sort-icon', ['field' => 'firstname'])</th>
-                        <th wire:click="sortBy('lastname')">Last Name @include('partials._sort-icon', ['field' => 'lastname'])</th>
+                        <th wire:click="sortBy('name')">Name @include('partials._sort-icon', ['field' => 'name'])</th>
                         <th wire:click="sortBy('email')">Email @include('partials._sort-icon', ['field' => 'email'])</th>
-                        <th wire:click="sortBy('phone')">Phone @include('partials._sort-icon', ['field' => 'phone'])</th>
                         <th>Role</th>
                         <th>Created At</th>
                         <th>Action</th>
@@ -44,10 +42,8 @@
                     @foreach ($users as $user)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $user->firstname }}</td>
-                            <td>{{ $user->lastname }}</td>
+                            <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->phone }}</td>
                             <td>
                                 @foreach ($user->roles as $key => $role)
                                     <span class="badge rounded-pill bg-success">{{ $role->name }}</span>
@@ -55,17 +51,17 @@
                             </td>
                             <td>{{ $user->created_at->diffForHumans() }}</td>
                             <td class="btn-group">
-                                <a class="btn btn-success text-white btn-sm" href="{{route('app.users.show', $user->id)}}">
+                                <a class="btn btn-success text-white btn-sm" href="">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                                <a class="btn btn-info btn-sm" href="{{route('app.users.edit', $user->id)}}">
+                                <a class="btn btn-info btn-sm" href="">
                                     <i class="fa fa-edit"></i>
                                 </a>
                                 <a href="" class="btn btn-danger btn-sm"
                                     onclick="event.preventDefault(); document.getElementById('del#{{ $user->id }}').submit();">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <form id="del#{{ $user->id }}" action="{{route('app.users.destroy', $user->id)}}" method="POST"
+                                <form id="del#{{ $user->id }}" action="" method="POST"
                                     onsubmit="return confirm('Are you sure');" style="display: inline-block;">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

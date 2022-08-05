@@ -52,7 +52,7 @@ class RoleController extends Controller
 
         $role = Role::create($request->all());
         $role->permissions()->sync($request->input('permissions', []));
-        return redirect()->route('app.roles.index')->with('success', 'Roles Added');
+        return redirect()->route('admin.roles.index')->with('success', 'Roles Added');
 
     }
 
@@ -80,7 +80,7 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         $this->authorize('update-roles');
-        $permissions = Permission::all();
+        $permissions = Permission::all()->pluck('name', 'id');
         return view('roles.edit', compact('role', 'permissions'));
     }
 
@@ -98,7 +98,7 @@ class RoleController extends Controller
         $role->update($request->all());
 
         $role->permissions()->sync($request->input('permissions', []));
-        return redirect()->route('app.roles.index')->with('success', 'Roles Updated');
+        return redirect()->route('admin.roles.index')->with('success', 'Roles Updated');
 
     }
 
@@ -112,7 +112,7 @@ class RoleController extends Controller
     {
         $this->authorize('delete-roles');
         $role->delete();
-        return redirect()->route('app.roles.index')->with('success', 'Roles Deleted');
+        return redirect()->route('admin.roles.index')->with('success', 'Roles Deleted');
 
     }
 }
