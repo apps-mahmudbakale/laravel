@@ -16,7 +16,7 @@
                             <div class="row g-0 w-100">
                                 <div class="col-6">
                                     <div class="illustration-text p-3 m-1">
-                                        <h4 class="illustration-text">Welcome Back, {{auth()->user()->name}}</h4>
+                                        <h4 class="illustration-text">Welcome Back, {{auth()->user()->firstname ." ". auth()->user()->lastname}}</h4>
                                         <p class="mb-0">Trading Dashboard</p>
                                     </div>
                                 </div>
