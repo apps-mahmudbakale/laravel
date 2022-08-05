@@ -7,14 +7,16 @@ use Livewire\Component;
 
 class Users extends Base
 {
-    public $sortBy = 'name';
+    public $sortBy = 'firstname';
     public function render()
     {
 
         if ($this->search) {
             $users = User::query()
-                ->where('name', 'like', '%' . $this->search . '%')
+                ->where('firstname', 'like', '%' . $this->search . '%')
+                ->where('lastname', 'like', '%' . $this->search . '%')
                 ->Orwhere('email', 'like', '%' . $this->search . '%')
+                ->Orwhere('phone', 'like', '%' . $this->search . '%')
                 ->paginate(10);
 
             return view(

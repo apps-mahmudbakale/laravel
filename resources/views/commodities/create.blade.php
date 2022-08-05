@@ -24,6 +24,10 @@
                                         <input type="number" name="old_price" class="form-control" step="0" id="old_price"
                                             placeholder="Old Price">
                                     </div>
+                                    <div class="mb-3 col-md-12">
+                                        <label class="form-label" for="old_price">Ware House</label>
+                                       <select name="warehouse" id="" class="form-control"></select>
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
