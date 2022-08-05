@@ -77,7 +77,7 @@
     <img src="{{asset('img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded-circle me-1" alt="{{auth()->user()->name}}" /> <span class="text-dark">{{auth()->user()->name}}</span>
   </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+                    <a class="dropdown-item" href=""><i class="align-middle me-1" data-feather="user"></i> Profile</a>
                     <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="pages-settings.html">Settings & Privacy</a>
