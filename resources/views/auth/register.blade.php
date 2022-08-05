@@ -35,10 +35,20 @@
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label class="form-label">Full Name</label>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <label class="form-label">First Name</label>
+                    <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="Firstname" autofocus>
 
-                    @error('name')
+                    @error('firstname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="Lastname" autofocus>
+
+                    @error('lastname')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -49,6 +59,25 @@
                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                         value="{{ old('email') }}">
                     @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Occupation</label>
+                    <select name="occupation" id="occupation" class="form-control">
+                        <option value="">Choose....</option>
+                        <option value="Student">Student</option>
+                        <option value="Entrepreneur">Entrepreneur</option>
+                        <option value="Employee">Employee</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone NUmber</label>
+                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="Firstname" autofocus>
+
+                    @error('phone')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
