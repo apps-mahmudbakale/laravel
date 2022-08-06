@@ -23,7 +23,7 @@ use App\Http\Controllers\PortfolioController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 Route::get('/about', function () {

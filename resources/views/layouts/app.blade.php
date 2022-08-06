@@ -14,46 +14,128 @@
     <title>{{ config('app.name', 'Rima Agricultural Comodity Exchange') }} | Homepage</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('img/favicon.png')}}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="{{ asset('css/crypto-bundle.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    @include('partials.header')
+    <div class="invisible-deco"><svg width="38px" height="43px" viewbox="0 0 38 43" version="1.1">
+            <defs>
+                <lineargradient id="titleLinearGradient-1" x1="34.5063846%" y1="15.1303808%" x2="20.8153155%"
+                    y2="110.664023%">
+                    <stop stop-color="#9C27B0" offset="0%"></stop>
+                    <stop stop-color="#FFA000" offset="100%"></stop>
+                </lineargradient>
+            </defs>
+            <defs>
+                <lineargradient id="hexaLinearGradient-3" x1="66.8412844%" y1="30.62426%" x2="-21.0581447%"
+                    y2="100%">
+                    <stop stop-color="#FFA000" offset="0%"></stop>
+                    <stop stop-color="#FFECB3" offset="100%"></stop>
+                </lineargradient>
+            </defs>
+            <defs>
+                <lineargradient id="hexaLinearGradient-2" x1="66.8412844%" y1="30.62426%" x2="-21.0581447%"
+                    y2="100%">
+                    <stop stop-color="#9C27B0" offset="0%"></stop>
+                    <stop stop-color="#E1BEE7" offset="100%"></stop>
+                </lineargradient>
+            </defs>
+            <defs>
+                <lineargradient id="frmDecoLinearGradient-1" x1="33.650521%" y1="14.3140713%" x2="18.9688557%"
+                    y2="110.664023%">
+                    <stop stop-color="#9C27B0" offset="0%"></stop>
+                    <stop stop-color="#FFA000" offset="100%"></stop>
+                </lineargradient>
+            </defs>
+        </svg></div>
+    <div class="m-application theme--light transition-page" id="app">
+        <div class="loading"></div>
+        <div class="m-content coinz coinz-var" id="main-wrap">
+            <div id="home">
+                <div class="main-wrap">
+                    <div class="hidden-md-down">
+                        <div class="market-carousel">
+                            <div class="slick-carousel" id="market_carousel">
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/btc.png"
+                                                alt="BTC"></div>BTC 1020 (<span class="up"><i>&#x25B2;</i>8%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/xrp.png"
+                                                alt="XRP"></div>XRP 0.003 (<span class="down"><i>&#x25BC;</i>3%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/nem.png"
+                                                alt="NEM"></div>NEM 0.03 (<span class="up"><i>&#x25B2;</i>8%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/iot.png"
+                                                alt="IOTA"></div>IOTA 0.01 (<span class="down"><i>&#x25BC;</i>3%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/mnr.png"
+                                                alt="MNR"></div>MNR 1.45 (<span class="up"><i>&#x25B2;</i>8%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/byc.png"
+                                                alt="BYC"></div>BYC 22.34 (<span class="down"><i>&#x25BC;</i>3%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/iot.png"
+                                                alt="IOTA"></div>IOTA 0.01 (<span class="down"><i>&#x25BC;</i>3%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/mnr.png"
+                                                alt="MNR"></div>MNR 1.45 (<span class="up"><i>&#x25B2;</i>8%</span>)
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="coin">
+                                        <div class="avatar-img logo"><img
+                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/byc.png"
+                                                alt="BYC"></div>BYC 22.34 (<span class="down"><i>&#x25BC;</i>3%</span>)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @include('partials.header')
 
-    @yield('content')
+                @yield('content')
 
-    @include('partials.footer')
-    <div class="go-top"><i data-feather="arrow-up"></i></div>
-
-    <!-- Dark/Light Toggle -->
-    <div class="dark-version">
-        <label id="switch" class="switch">
-            <input type="checkbox" onchange="toggleTheme()" id="slider">
-            <span class="slider round"></span>
-        </label>
+                @include('partials.footer')
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        let html ='';
-            fetch('https://comxapp.afexnigeria.com/api/security-price/live/site?format=json')
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data.data);
-                let datas = data.data;
-                datas.forEach(element => {
-                    if(element.type === 'Sell'){
-                        html +=`<li class="font-light"><span class="mx-2">${element.commodity_code}</span><span class="font-bold mx-2">${element.marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'NGN' })}</span><span class="text-danger">${element.changePercentage}%</span></li>`;
-                    } else{
-                        html +=`<li class="font-light"><span class="mx-2">${element.commodity_code}</span><span class="font-bold mx-2">${element.marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'NGN' })}</span><span class="text-success">${element.changePercentage}%</span></li>`;
-                    }
-                   
-                });
-                // console.log(html);
-                document.getElementById('live-data').innerHTML = html;
-            })
-            
-    </script>
+    <script src="{{ asset('js/crypto-bundle.min.js') }}"></script>
 </body>
 
 </html>
