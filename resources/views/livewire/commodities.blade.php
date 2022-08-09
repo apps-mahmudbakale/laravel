@@ -32,8 +32,10 @@
                     <tr>
                         <th>#</th>
                         <th wire:click="sortBy('name')">Name @include('partials._sort-icon', ['field' => 'name'])</th>
+                        <th wire:click="sortBy('commodity_code')">Code @include('partials._sort-icon', ['field' => 'commodity_code'])</th>
                         <th wire:click="sortBy('current_price')">Current Price @include('partials._sort-icon', ['field' => 'current_price'])</th>
                         <th wire:click="sortBy('old_price')">Old Price @include('partials._sort-icon', ['field' => 'old_price'])</th>
+                        <th>Ware House</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -43,9 +45,10 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $commodity->name }}</td>
+                            <td>{{ $commodity->commodity_code }}</td>
                             <td>&#8358;{{ number_format($commodity->current_price) }}</td>
                             <td>&#8358;{{ number_format($commodity->old_price) }}</td>
-                            {{-- <td class="{{$commodity->getCommodityPriceChange() < 0 ? 'text-danger' : 'text-success'}}">{{ $commodity->getCommodityPriceChange() < 0 ? $commodity->getCommodityPriceChangePercentageFormatted() : '+'. $commodity->getCommodityPriceChangePercentageFormatted()}}</td> --}}
+                            <td>{{ $commodity->wareHouse->name}}</td>
                             <td>{{ $commodity->created_at->diffForHumans() }}</td>
                             <td class="btn-group">
                                 <a class="btn btn-info btn-sm" href="{{route('app.commodities.edit', $commodity->id)}}">

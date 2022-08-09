@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class WareHouse extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'location',
+        'capacity'
+    ];
 }

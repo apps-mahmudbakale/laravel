@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('commodities', function (Blueprint $table) {
-            
-            $table->foreignId('ware_house_id')->after('id')->references('id')->on('ware_houses')->onDelete('cascade');
+            $table->string('commodity_code')->after('name')->nullable();
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        
+        //
     }
 };

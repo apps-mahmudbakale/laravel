@@ -160,7 +160,7 @@
                     <div class="item">
                         <div class="row spacing6">
                             <div class="col-md-6">
-                                <div class="text text-start text-sm-center"><span class="ion-ios-locked-outline"></span>
+                                <div class="text text-start text-sm-center"><span class="fa fa-play"></span>
                                     <div class="title-main align-left">
                                         <div class="deco-title"><svg width="38px" height="43px" viewbox="0 0 38 43"
                                                 version="1.1">
@@ -180,11 +180,7 @@
                             <div class="col-md-6 py-md-0 px-6">
                                 <div class="wow fadeInRightShort" data-wow-offset="100" data-wow-delay="0.4s"
                                     data-wow-duration="0.3s">
-                                    <figure class="illustration"><img class="img-2d3d"
-                                            src="https://res.cloudinary.com/skyrev/image/upload/v1613841816/skyrev/crypto/feature1_3d_2x_heqkqd.png"
-                                            data-2d="https://res.cloudinary.com/skyrev/image/upload/v1613841814/skyrev/crypto/feature1_2d_2x_vjz5d8.png"
-                                            data-3d="https://res.cloudinary.com/skyrev/image/upload/v1613841816/skyrev/crypto/feature1_3d_2x_heqkqd.png"
-                                            alt="feature"></figure>
+                                    <figure class="illustration"><img class="img-2d3d" src="{{asset('img/Commodity Market Growth.jpeg')}}"></figure>
                                 </div>
                             </div>
                         </div>

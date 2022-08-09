@@ -13,6 +13,8 @@ class Commodity extends Model
         'name',
         'current_price',
         'old_price',
+        'ware_house_id',
+        'commodity_code'
     ];
 
     public function getCommodityPriceChange()
@@ -34,5 +36,10 @@ class Commodity extends Model
 
         return $this->hasMany(Security::class);
     } 
+
+    public function wareHouse(){
+
+        return $this->belongsTo(WareHouse::class);
+    }
     
 }

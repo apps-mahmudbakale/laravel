@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commodity;
+use App\Models\WareHouse;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommodityFormRequest;
 
@@ -25,7 +26,8 @@ class CommodityController extends Controller
      */
     public function create()
     {
-        return view('commodities.create');
+        $warehouses = WareHouse::all();
+        return view('commodities.create', compact('warehouses'));
     }
 
     /**

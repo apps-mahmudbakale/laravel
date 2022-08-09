@@ -14,7 +14,7 @@ class WareHouseController extends Controller
      */
     public function index()
     {
-        //
+        return view('warehouses.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class WareHouseController extends Controller
      */
     public function create()
     {
-        //
+        return view('warehouses.create');
     }
 
     /**
@@ -35,7 +35,9 @@ class WareHouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $update = WareHouse::create($request->all());
+
+        return redirect()->route('app.warehouses.index')->with('success', 'Warehouse Added Successfully');
     }
 
     /**
@@ -55,9 +57,9 @@ class WareHouseController extends Controller
      * @param  \App\Models\WareHouse  $wareHouse
      * @return \Illuminate\Http\Response
      */
-    public function edit(WareHouse $wareHouse)
+    public function edit(WareHouse $warehouse)
     {
-        //
+        return view('warehouses.edit', compact('warehouse'));
     }
 
     /**
@@ -67,9 +69,11 @@ class WareHouseController extends Controller
      * @param  \App\Models\WareHouse  $wareHouse
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, WareHouse $wareHouse)
+    public function update(Request $request, WareHouse $warehouse)
     {
-        //
+        $warehouse->update($request->all());
+
+        return redirect()->route('app.warehouses.index')->with('success', 'Warehouse Updated Successfully');
     }
 
     /**
@@ -78,8 +82,9 @@ class WareHouseController extends Controller
      * @param  \App\Models\WareHouse  $wareHouse
      * @return \Illuminate\Http\Response
      */
-    public function destroy(WareHouse $wareHouse)
+    public function destroy(WareHouse $warehouse)
     {
-        //
+        $warehouse->delete();
+        return redirect()->back()->with('success', 'Warehouse Deleted Successfully');
     }
 }

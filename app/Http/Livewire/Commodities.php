@@ -13,6 +13,7 @@ class Commodities extends Base
         if ($this->search) {
             $commodities = Commodity::query()
                 ->where('name', 'like', '%' . $this->search . '%')
+                ->where('commodity_code', 'like', '%' . $this->search . '%')
                 ->Orwhere('current_price', 'like', '%' . $this->search . '%')
                 ->Orwhere('old_price', 'like', '%' . $this->search . '%')
                 ->Orwhere('no_of_buys', 'like', '%' . $this->search . '%')

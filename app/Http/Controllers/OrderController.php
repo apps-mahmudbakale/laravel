@@ -47,8 +47,12 @@ class OrderController extends Controller
         $wallet = Wallet::where('user_id', auth()->user()->id)->first();
         $commodity->no_of_deals += 1;
         if ($request->order_type == 'buy') {
-            $commodity->no_of_buys += 1;
-            $wallet->cash_balance = ($wallet->cash_balance) - ($request->qty * $commodity->current_price);
+            if (auth()->user()->getWalletBalance() == 0) {
+                return back()->with('error', 'You have no money in your wallet');
+            } else {
+                $commodity->no_of_buys += 1;
+                $wallet->cash_balance = ($wallet->cash_balance) - ($request->qty * $commodity->current_price);
+            }
         } elseif ($request->order_type == 'sell') {
             $commodity->no_of_sells += 1;
             $wallet->cash_balance = ($wallet->cash_balance) + ($request->qty * $commodity->current_price);

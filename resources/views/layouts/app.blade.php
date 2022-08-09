@@ -60,69 +60,14 @@
                     <div class="hidden-md-down">
                         <div class="market-carousel">
                             <div class="slick-carousel" id="market_carousel">
+                                @foreach ($commodities as $commodity )
                                 <div class="item">
                                     <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/btc.png"
-                                                alt="BTC"></div>BTC 1020 (<span class="up"><i>&#x25B2;</i>8%</span>)
+                                        <div class="avatar-img logo"><img src="{{asset('img/xrp.png')}}"></div> {{ $commodity->commodity_code}} {{number_format($commodity->current_price)}} (<span class="{{ $commodity->getCommodityPriceChange() < 0 ? 'down' : 'up' }}"><i></i>{{$commodity->getCommodityPriceChangePercentageFormatted()}}</span>)
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/xrp.png"
-                                                alt="XRP"></div>XRP 0.003 (<span class="down"><i>&#x25BC;</i>3%</span>)
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/nem.png"
-                                                alt="NEM"></div>NEM 0.03 (<span class="up"><i>&#x25B2;</i>8%</span>)
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/iot.png"
-                                                alt="IOTA"></div>IOTA 0.01 (<span class="down"><i>&#x25BC;</i>3%</span>)
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/mnr.png"
-                                                alt="MNR"></div>MNR 1.45 (<span class="up"><i>&#x25B2;</i>8%</span>)
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/byc.png"
-                                                alt="BYC"></div>BYC 22.34 (<span class="down"><i>&#x25BC;</i>3%</span>)
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/iot.png"
-                                                alt="IOTA"></div>IOTA 0.01 (<span class="down"><i>&#x25BC;</i>3%</span>)
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/mnr.png"
-                                                alt="MNR"></div>MNR 1.45 (<span class="up"><i>&#x25B2;</i>8%</span>)
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="coin">
-                                        <div class="avatar-img logo"><img
-                                                src="https://skyone.vercel.app/crypto/assets/images/crypto/byc.png"
-                                                alt="BYC"></div>BYC 22.34 (<span class="down"><i>&#x25BC;</i>3%</span>)
-                                    </div>
-                                </div>
+                                @endforeach
+
                             </div>
                         </div>
                     </div>

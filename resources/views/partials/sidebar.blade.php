@@ -25,8 +25,8 @@
                 </a>
                 <ul id="commodities" class="sidebar-dropdown list-unstyled collapse {{ request()->routeIs('app.commodities.*') ? 'show' : '' }} " data-bs-parent="#sidebar">
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.commodities.index')}}">Commodities</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.users.index')}}">Ware Houses</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.users.index')}}">Orders</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.warehouses.index')}}">Ware Houses</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.orders.index')}}">Orders</a></li>
                 </ul>
             </li>
             {{-- <li class="sidebar-item {{ request()->routeIs('app.orders.*') ? 'active' : '' }}">

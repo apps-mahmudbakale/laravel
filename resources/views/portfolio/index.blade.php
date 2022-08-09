@@ -124,8 +124,11 @@
                                                                 class="form-control">
                                                             <br>
                                                             <button onclick="payWithPaystack()"
-                                                                class="btn btn-primary" type="submit">Pay with
+                                                                class="btn btn-primary" type="submit"> <img src="{{asset('paystack.png')}}" width="16" height="16"> Pay with
                                                                 PayStack</button>
+                                                                <button onclick="makePayment()"
+                                                                class="btn btn-warning" type="submit"> <img src="{{asset('flutterwave.png')}}" width="16" height="16"> Pay with
+                                                                FlutterWave</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -198,4 +201,68 @@
         </div>
       
     </main>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <script>
+        let Url = 'http://localhost:8000/api/'
+
+        function payWithPaystack() {
+            var handler = PaystackPop.setup({
+                key: 'pk_live_17bb60dd12dbb0d38c928f73a900494bda8a0ba0', // Replace with your public key
+                email: '{{ auth()->user()->email }}',
+                amount: document.getElementById('amount').value *
+                    100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+                currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
+                ref: 'RIMA_EX' + Math.floor((Math.random() * 1000000000) + 1),
+                callback: function(response) {
+                    //this happens after the payment is completed successfully
+                    var reference = response.reference;
+                    // alert('Payment complete! Reference: ' + reference);
+                    // Make an AJAX call to your server with the reference to verify the transaction
+                    fetch(Url + 'FundWallet', {
+                            method: 'POST',
+                            headers: {
+                                'Accept': 'application/json, text/plain, */*',
+                                'Content-type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                user_id: '{{ auth()->user()->id }}',
+                                amount: document.getElementById('amount').value,
+                                reference: reference
+                            })
+                        })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            console.log(data);
+                        })
+                },
+                onClose: function() {
+                    alert('Transaction was not completed, window closed.');
+                },
+            });
+            handler.openIframe();
+        }
+    </script>
+    <script>
+        function makePayment() {
+          FlutterwaveCheckout({
+            public_key: "FLWPUBK-b37536cc59e249f2fc0c85e90d5b13c8-X",
+            tx_ref: 'RIMA_EX' + Math.floor((Math.random() * 1000000000) + 1),
+            amount: document.getElementById('amount').value,
+            currency: "NGN",
+            payment_options: "card, banktransfer, ussd",
+            redirect_url: "http://localhost:8000/api/FundWallet",
+            customer: {
+              email: "{{ auth()->user()->email }}",
+              phone_number: "{{ auth()->user()->phone }}",
+              name: "{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}",
+            },
+            customizations: {
+              title: "Rima Agricultural Commodity Exchange",
+              description: "Fund Wallet",
+              logo: "{{asset('img/favicon.png')}}",
+            },
+          });
+        }
+      </script>
 @endsection

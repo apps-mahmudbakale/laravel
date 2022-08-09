@@ -71,4 +71,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->orders->count();
     }
 
+    public function securities()
+    {
+        return $this->hasMany(Security::class);
+    }
+ 
+
+    public function mySecurities()
+    {
+        return $this->securities->pluck('commodity_id');
+    }
+
 }

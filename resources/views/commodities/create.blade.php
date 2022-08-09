@@ -16,6 +16,10 @@
                                         <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
                                     </div>
                                     <div class="mb-3 col-md-12">
+                                        <label class="form-label" for="inputName">Commodity Code</label>
+                                        <input type="text" name="commodity_code" class="form-control" id="inputName" placeholder="Code">
+                                    </div>
+                                    <div class="mb-3 col-md-12">
                                         <label class="form-label" for="inputPrice">Current Price</label>
                                         <input type="number" name="current_price" class="form-control" min="0" step="0" id="inputPrice" placeholder="Current Price">
                                     </div>
@@ -26,7 +30,11 @@
                                     </div>
                                     <div class="mb-3 col-md-12">
                                         <label class="form-label" for="old_price">Ware House</label>
-                                       <select name="warehouse" id="" class="form-control"></select>
+                                       <select name="ware_house_id" id="" class="form-control">
+                                        @foreach ($warehouses as $warehouse)
+                                            <option value="{{$warehouse->id}}">{{$warehouse->name }}</option>
+                                        @endforeach
+                                       </select>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
