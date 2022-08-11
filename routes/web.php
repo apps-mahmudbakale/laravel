@@ -30,7 +30,7 @@ Route::get('/', [WelcomeController::class,'welcome'])->name('welcome');
 Route::get('/about', function () {
     return view('about', ['commodities' => Commodity::all()]);
 })->name('about');
-
+Route::get('/test', [OrderController::class, 'create'])->name('test');
 Auth::routes(['verify' => true]);
 
 

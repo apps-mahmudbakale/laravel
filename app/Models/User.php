@@ -61,6 +61,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->wallets->sum('cash_balance');
     }
 
+    public function getLienBalance()
+    {
+        return $this->wallets->sum('lien_balance');
+    }
+
     public function getWalletAccountNumber()
     {
         return $this->wallets->first()->account_number;

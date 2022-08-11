@@ -34,9 +34,7 @@
                             <td class="d-none d-xl-table-cell"><a href="" class="btn btn-outline-success"
                                     wire:click.prevent="selectedProduct({{ $market->id }}, 'buy')">Buy</a></td>
                             </td>
-                            <td class="d-none d-xl-table-cell">{{ $market->no_of_sells }}</td>
-                            {{ auth()->user()->mySecurities() }}  
-                          
+                            <td class="d-none d-xl-table-cell">{{ $market->no_of_sells }}</td> 
                                 <td class="d-none d-xl-table-cell"><button class="btn btn-outline-danger" {{in_array($market->id, auth()->user()->mySecurities()->toArray()) ? : 'disabled'}} 
                                         wire:click.prevent="selectedProduct({{ $market->id }}, 'sell')">Sell</button></td>
                         </tr>

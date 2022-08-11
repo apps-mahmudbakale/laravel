@@ -51,10 +51,10 @@
                                         <div class="card-body py-4">
                                             <div class="d-flex align-items-start">
                                                 <div class="flex-grow-1">
-                                                    <h3 class="mb-2">
-                                                        {{ auth()->user()->getOrdersCount()? number_format(auth()->user()->getOrdersCount()): 0 }}
+                                                    <h3 class="mb-2">&#8358;
+                                                        {{ auth()->user()->getLienBalance()? number_format(auth()->user()->getLienBalance()): 0 }}
                                                     </h3>
-                                                    <p class="mb-2">Total Trading Orders</p>
+                                                    <p class="mb-2">Lien Balance</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -66,7 +66,7 @@
                                             <div class="d-flex align-items-start">
                                                 <div class="flex-grow-1">
                                                     <h3 class="mb-2">&#8358;
-                                                        {{-- {{ auth()->user()->getSumOfSecuritiesValue()? number_format(auth()->user()->getSumOfSecuritiesValue()): number_format(0, 2) }} --}}
+                                                        {{$securitiesValues ? number_format($securitiesValues) : number_format(0,2)}}
                                                     </h3>
                                                     <p class="mb-2">Total Security Value</p>
                                                 </div>
@@ -171,7 +171,7 @@
                                                         <option value="">Barclays Bank</option>
                                                         <option value="">Citibank</option>
                                                     </select>
-                                                    <p class="float-end"><a href="">Add New Bank</a></p>
+                                                    <p class="float-end"><a href="" id="addBank" data-toggle="modal" data-target="#exampleModal">Add New Bank</a></p>
                                                 </div>
                                                 <div class="form-group">
                                                     Enter Login Password:
@@ -234,6 +234,7 @@
                         .then((res) => res.json())
                         .then((data) => {
                             console.log(data);
+                            location.reload();
                         })
                 },
                 onClose: function() {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PortfolioController extends Controller
 {
@@ -13,7 +14,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        return view('portfolio.index');
+        $securitiesValues = DB::table('securities')->join('commodities', 'securities.commodity_id', '=', 'commodities.id')->where('securities.user_id', '=', auth()->user()->id)->sum(DB::raw('commodities.current_price * securities.security_qty'));
+        return view('portfolio.index', ['securitiesValues' => $securitiesValues]);
     }
 
     /**

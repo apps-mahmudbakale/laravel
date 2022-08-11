@@ -49,6 +49,7 @@
         window.addEventListener('openSellModal', function() {
             $('#defaultModalPrimary2').modal('show');
         });
+        
     </script>
     <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}
