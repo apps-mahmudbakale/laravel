@@ -54,12 +54,34 @@
                                 <a class="btn btn-info btn-sm" href="{{route('app.commodities.edit', $commodity->id)}}">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a href="" class="btn btn-danger btn-sm"
-                                    onclick="event.preventDefault(); document.getElementById('del#{{ $commodity->id }}').submit();">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                                <form id="del#{{ $commodity->id }}" action="" method="POST"
-                                    onsubmit="return confirm('Are you sure');" style="display: inline-block;">
+                                <button class="btn btn-danger btn-sm" id="del{{ $commodity->id }}"
+                                    data-value="{{ $commodity->id }}"><i class="fa fa-trash"></i></button>
+                                <script>
+                                    document.querySelector('#del{{ $commodity->id }}').addEventListener('click', function(e) {
+                                        // alert(this.getAttribute('data-value'));
+                                        Swal.fire({
+                                            title: 'Are you sure?',
+                                            text: "You won't be able to revert this!",
+                                            icon: 'warning',
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#3085d6',
+                                            cancelButtonColor: '#d33',
+                                            confirmButtonText: 'Yes, delete it!'
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                document.getElementById('del#'+this.getAttribute('data-value')).submit();
+                                                // Swal.fire(
+                                                //     'Deleted!',
+                                                //     'Your file has been deleted.',
+                                                //     'success'
+                                                // )
+                                            }
+                                        })
+                                    })
+                                </script>
+                                <form id="del#{{ $commodity->id }}"
+                                    action="{{ route('app.commodities.destroy', $commodity->id) }}" method="POST"
+                                     style="display: inline-block;">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 </form>

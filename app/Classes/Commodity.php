@@ -34,4 +34,6 @@ class Commodity
         $model = CommodityModel::findOrfail($commodity);
         return $model->current_price;
     }
+
+    
 }

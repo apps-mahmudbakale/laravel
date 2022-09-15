@@ -38,4 +38,11 @@ class Security
 
         return $this->model;
     }
+
+    public function securitiesQty($user, $commodity)
+    {
+        $this->model = SecurityModel::where('user_id', $user)->where('commodity_id', $commodity)->first();
+
+        return $this->model->security_qty;
+    }
 }

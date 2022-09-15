@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Commodity;
+use App\Events\SellOrderEvent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -33,6 +34,9 @@ Route::get('/about', function () {
 Route::get('/test', [OrderController::class, 'create'])->name('test');
 Auth::routes(['verify' => true]);
 
+// Route::get('/broadcast', function () {
+//     broadcast(new SellOrderEvent());
+// });
 
 /* Route Dashboards */
 Route::group(['prefix' => 'app', 'as' => 'app.', 'middleware' => 'auth'], function () {
@@ -45,6 +49,7 @@ Route::group(['prefix' => 'app', 'as' => 'app.', 'middleware' => 'auth'], functi
     Route::resource('warehouses', WareHouseController::class);
     Route::resource('portfolio', PortfolioController::class);
     Route::resource('orders', OrderController::class);
+    Route::get('orders/approve/{id}', [OrderController::class, 'approve'])->name('orders.approve');
     Route::resource('settings', SettingController::class);
 });
 

@@ -24,9 +24,14 @@ class Wallet
         return $this;
     }
 
-    public function deductFromWallet()
+    public function deductFromWallet($user, $amount)
     {
-        # code...
+        $this->model = WalletModel::where('user_id', $user)->first();
+
+        $this->model->cash_balance = $this->model->cash_balance -= $amount;
+        $this->model->save();
+
+        return $this->model;
     }
 
     public function updateLienBalance($user, $amount)
@@ -34,6 +39,17 @@ class Wallet
         $this->model = WalletModel::where('user_id', $user)->first();
 
         $this->model->lien_balance = $this->model->lien_balance += $amount;
+        $this->model->save();
+
+        return $this->model;
+    }
+
+    public function moveFromLienToWallet($user)
+    {
+        $this->model = WalletModel::where('user_id', $user)->first();
+
+        $this->model->cash_balance = $this->model->cash_balance += $this->model->lien_balance;
+        $this->model->lien_balance = 0;
         $this->model->save();
 
         return $this->model;

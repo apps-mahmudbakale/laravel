@@ -84,7 +84,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function mySecurities()
     {
-        return $this->securities->pluck('commodity_id');
+        return $this->securities->where('security_qty', '!=', '0')->pluck('commodity_id');
     }
 
 }

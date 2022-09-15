@@ -51,25 +51,14 @@
                                                             name="phone" required> <label
                                                             for="phone">Phone Number? *</label></div>
                                                 </div>
-                                                <div class="col-sm-12">
-                                                    <label for="occupation">Occupation? *</label>
-                                                    <div class="input-field filled">
-                                                        <select name="occupation" id="occupation" class="select">
-                                                            <option value="Student">Student</option>
-                                                            <option value="Entrepreneur">Entrepreneur</option>
-                                                            <option value="Employee">Employee</option>
-                                                        </select>
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="input-field filled mq-md-up"
                                                         data-class="me-2"><input class="validate"
                                                             id="password" type="password"
                                                             name="password" required> <label
                                                             for="password">Password</label></div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="input-field filled mq-md-up"
                                                         data-class="ms-2"><input class="validate"
                                                             id="confirm" type="password"

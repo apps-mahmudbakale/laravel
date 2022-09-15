@@ -49,12 +49,34 @@
                                 <a class="btn btn-info btn-sm" href="{{route('app.roles.edit', $role->id)}}">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a href="" class="btn btn-danger btn-sm"
-                                    onclick="event.preventDefault(); document.getElementById('del#{{ $role->id }}').submit();">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                                <form id="del#{{ $role->id }}" action="{{route('app.roles.destroy', $role->id)}}" method="POST"
-                                    onsubmit="return confirm('Are you sure');" style="display: inline-block;">
+                                <button class="btn btn-danger btn-sm" id="del{{ $role->id }}"
+                                    data-value="{{ $role->id }}"><i class="fa fa-trash"></i></button>
+                                <script>
+                                    document.querySelector('#del{{ $role->id }}').addEventListener('click', function(e) {
+                                        // alert(this.getAttribute('data-value'));
+                                        Swal.fire({
+                                            title: 'Are you sure?',
+                                            text: "You won't be able to revert this!",
+                                            icon: 'warning',
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#3085d6',
+                                            cancelButtonColor: '#d33',
+                                            confirmButtonText: 'Yes, delete it!'
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                document.getElementById('del#'+this.getAttribute('data-value')).submit();
+                                                // Swal.fire(
+                                                //     'Deleted!',
+                                                //     'Your file has been deleted.',
+                                                //     'success'
+                                                // )
+                                            }
+                                        })
+                                    })
+                                </script>
+                                <form id="del#{{ $role->id }}"
+                                    action="{{ route('app.roles.destroy', $role->id) }}" method="POST"
+                                     style="display: inline-block;">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 </form>

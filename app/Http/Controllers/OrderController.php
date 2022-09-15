@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Classes\Commodity as AppCommodity;
-use App\Classes\Order as AppOrder;
-use App\Exceptions\GeneralException;
 use App\Models\Order;
 use App\Models\Wallet;
 use App\Models\Security;
 use App\Models\Commodity;
 use Illuminate\Http\Request;
+use App\Events\SellOrderEvent;
+use App\Classes\Order as AppOrder;
+use App\Exceptions\GeneralException;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Classes\Commodity as AppCommodity;
 
 class OrderController extends Controller
 {
@@ -29,9 +30,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(AppCommodity $commodity)
+    public function create()
     {
-        return $commodity->test();
+        
     }
 
     /**
@@ -40,50 +41,17 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, AppOrder $order, AppCommodity $commodity)
+    public function store(Request $request, AppOrder $order)
     {
         try {
             $order->create($request->all());
+            broadcast(new SellOrderEvent());
         } catch (GeneralException $e) {
             return redirect()->route('app.market.index')->with('error', $e->getMessage());
         }
        
-        // $commodity->setDeals($request->commodity_id);
-        // $wallet = Wallet::where('user_id', auth()->user()->id)->first();
-        // // $commodity->no_of_deals += 1;
-        // if ($request->order_type == 'buy') {
-        //     if (auth()->user()->getWalletBalance() == 0) {
-        //         return back()->with('error', 'You have no money in your wallet');
-        //     } else {
-        //         $commodity->no_of_buys += 1;
-        //         $wallet->cash_balance = ($wallet->cash_balance) - ($request->qty * $commodity->current_price);
-        //     }
-        // } elseif ($request->order_type == 'sell') {
-        //     $commodity->no_of_sells += 1;
-        //     $wallet->cash_balance = ($wallet->cash_balance) + ($request->qty * $commodity->current_price);
-        // }
-        // $commodity->save();
-        // $wallet->save();
-
-        // if ($request->order_type == 'buy') {
-        //     if ($security = Security::where('user_id', auth()->user()->id)->where('commodity_id', $commodity->id)->first()) {
-        //         $security_qty = $security->security_qty + $request->qty;
-        //         $security->security_qty = $security_qty;
-        //         $security->save();
-        //     } else {
-        //         $security_qty = $request->qty;
-        //         $saveSecurity = Security::create(array_merge($request->only('commodity_id'), ['user_id' => auth()->user()->id, 'security_qty' => $security_qty]));
-        //     }
-        // } elseif ($request->order_type == 'sell') {
-        //     if ($security = Security::where('user_id', auth()->user()->id)->where('commodity_id', $commodity->id)->first()) {
-        //         $security_qty = $security->security_qty - $request->qty;
-        //         $security->security_qty = $security_qty;
-        //         $security->save();
-        //     }
-        // }
         return redirect()->route('app.market.index')->with('success', 'Your Order Has Been Added');
 
-        // dd($wallet->cash_balance = ($wallet->cash_balance) - ($request->qty * $commodity->current_price));
     }
 
     /**
@@ -106,6 +74,13 @@ class OrderController extends Controller
     public function edit(Order $order)
     {
         //
+    }
+
+    public function approve(AppOrder $order, $id)
+    {
+        $order->approveOrder($id);
+
+        return redirect()->route('app.orders.index')->with('success', 'Order Has Been Approved');
     }
 
     /**

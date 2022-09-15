@@ -10,40 +10,46 @@
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboards</span>
                 </a>
             </li>
+            @can('read-users')
             <li class="sidebar-item {{ request()->routeIs('app.users.*') ? 'active' : '' }}">
                 <a data-bs-target="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>
                 </a>
                 <ul id="auth" class="sidebar-dropdown list-unstyled collapse {{ request()->routeIs('app.users.*') ? 'show' : '' }} " data-bs-parent="#sidebar">
+                    @can('read-roles')
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.roles.index')}}">Roles</a></li>
+                    @endcan
+                    @can('create-users')
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.users.index')}}">Users</a></li>
+                    @endcan
                 </ul>
             </li>
-            <li class="sidebar-item {{ request()->routeIs('app.users.*') ? 'active' : '' }}">
+            @endcan
+            @can('read-commodities')
+            <li class="sidebar-item {{ request()->routeIs('app.commodities.*') ? 'active' : '' }}">
                 <a data-bs-target="#commodities" data-bs-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Commodities</span>
                 </a>
                 <ul id="commodities" class="sidebar-dropdown list-unstyled collapse {{ request()->routeIs('app.commodities.*') ? 'show' : '' }} " data-bs-parent="#sidebar">
+                    @can('read-commodities')
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.commodities.index')}}">Commodities</a></li>
+                    @endcan
+                    @can('read-warehouses')
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.warehouses.index')}}">Ware Houses</a></li>
+                    @endcan
+                    @can('read-orders')
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.orders.index')}}">Orders</a></li>
+                    @endcan
                 </ul>
             </li>
-            {{-- <li class="sidebar-item {{ request()->routeIs('app.orders.*') ? 'active' : '' }}">
-                <a  href="{{route('app.orders.index')}}" class="sidebar-link">
-                    <i class="align-middle" data-feather="shopping-bag"></i> <span class="align-middle">Orders</span>
-                </a>
-            </li> --}}
+            @endcan
+            @can('read-updates')
             <li class="sidebar-item {{ request()->routeIs('app.udates.*') ? 'active' : '' }}">
                 <a  href="{{route('app.updates.index')}}" class="sidebar-link">
                     <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Updates</span>
                 </a>
             </li>
-            {{-- <li class="sidebar-item {{ request()->routeIs('app.commodities.*') ? 'active' : '' }}">
-                <a  href="{{route('app.commodities.index')}}" class="sidebar-link">
-                    <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Commodities</span>
-                </a>
-            </li> --}}
+            @endcan
             <li class="sidebar-item {{ request()->routeIs('app.market.*') ? 'active' : '' }}">
                 <a  href="{{route('app.market.index')}}" class="sidebar-link">
                     <i class="align-middle" data-feather="shopping-cart"></i> <span class="align-middle">Market</span>
