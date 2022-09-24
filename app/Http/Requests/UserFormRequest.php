@@ -35,9 +35,9 @@ class UserFormRequest extends FormRequest
             'phone'     => [
                 'required',
             ],
-            'occupation'  => [
-                'required',
-            ],
+            // 'occupation'  => [
+            //     'required',
+            // ],
             'email'    => [
                 'required',
                 'email'

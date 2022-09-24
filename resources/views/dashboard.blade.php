@@ -48,7 +48,7 @@
                                     <h3 class="mb-2">{{auth()->user()->getOrdersCount() ? number_format(auth()->user()->getOrdersCount()) : 0}}</h3>
                                     <p class="mb-2">Total Trading Orders</p>
                                     <div class="mb-0">
-                                        <a href="#" class="btn btn-primary btn-sm">View Orders</a>
+                                        <a href="{{route('app.porfolio.orders')}}" class="btn btn-primary btn-sm">View Orders</a>
                                     </div>
                                 </div>
                             </div>

@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+        Schema::table('transactions', function (Blueprint $table){
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreignId('commodity_id')->references('id')->on('commodities')->onDelete('cascade');
-            $table->integer('qty')->default(0);
-            $table->enum('order_type', ['buy', 'sell']);
-            $table->enum('order_status', ['pending','approved', 'discarded'])->default('pending');
-            $table->timestamps();
+            $table->integer('amount');
+            $table->string('type');
+            $table->string('reference_no');
+            $table->string('description');
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        //
     }
 };

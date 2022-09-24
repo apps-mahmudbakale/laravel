@@ -34,7 +34,25 @@
                     @can('read-commodities')
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.commodities.index')}}">Commodities</a></li>
                     @endcan
-                    @can('read-warehouses')
+                    @can('read-warehouse')
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.warehouses.index')}}">Ware Houses</a></li>
+                    @endcan
+                    @can('read-orders')
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.orders.index')}}">Orders</a></li>
+                    @endcan
+                </ul>
+            </li>
+            @endcan
+            @can('read-commodities')
+            <li class="sidebar-item {{ request()->routeIs('app.commodities.*') ? 'active' : '' }}">
+                <a data-bs-target="#accounting" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                    <i class="align-middle" data-feather="layers"></i> <span class="align-middle">Accounting</span>
+                </a>
+                <ul id="accounting" class="sidebar-dropdown list-unstyled collapse {{ request()->routeIs('app.commodities.*') ? 'show' : '' }} " data-bs-parent="#sidebar">
+                    @can('read-commodities')
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.commodities.index')}}">Commodities</a></li>
+                    @endcan
+                    @can('read-warehouse')
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('app.warehouses.index')}}">Ware Houses</a></li>
                     @endcan
                     @can('read-orders')

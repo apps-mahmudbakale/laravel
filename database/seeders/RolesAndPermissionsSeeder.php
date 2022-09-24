@@ -28,12 +28,11 @@ class RolesAndPermissionsSeeder extends Seeder
         $roles = [
             'admin',
             'user',
-            'broker',
         ];
         $entities = [
             'users',
             'roles',
-            'brokers',
+            'warehouse',
             'market',
             'commodities',
             'update',

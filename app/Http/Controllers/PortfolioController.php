@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
+use App\Models\User;
+use App\Models\Order;
+use App\Models\Security;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +20,8 @@ class PortfolioController extends Controller
     public function index()
     {
         $securitiesValues = DB::table('securities')->join('commodities', 'securities.commodity_id', '=', 'commodities.id')->where('securities.user_id', '=', auth()->user()->id)->sum(DB::raw('commodities.current_price * securities.security_qty'));
-        return view('portfolio.index', ['securitiesValues' => $securitiesValues]);
+        $banks = Bank::where('user_id', auth()->user()->id)->get();
+        return view('portfolio.index', ['securitiesValues' => $securitiesValues, 'banks' => $banks]);
     }
 
     /**
@@ -45,9 +51,27 @@ class PortfolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function securities()
     {
-        //
+        $orders = Security::paginate(10);
+        return view('portfolio.orders', compact('orders'));
+    }
+
+    public function orders()
+    {
+        $orders = Order::paginate(10);
+        return view('portfolio.orders', compact('orders'));
+    }
+    
+    public function profile($id)
+    {
+        $user = User::findOrFail($id);
+        $securitiesValues = DB::table('securities')->join('commodities', 'securities.commodity_id', '=', 'commodities.id')->where('securities.user_id', '=', $user)->sum(DB::raw('commodities.current_price * securities.security_qty'));
+        $orders = Order::where('user_id', $user->id)->paginate(10);
+        $securities = Security::where('user_id', $user->id)->get();
+        $transactions = Transaction::where('user_id', $user->id)->get();
+        $banks = Bank::where('user_id', auth()->user()->id)->get();
+        return view('portfolio.profile', compact('user','securities', 'orders', 'securitiesValues', 'banks', 'transactions'));
     }
 
     /**

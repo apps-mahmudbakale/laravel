@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Security;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\UserFormRequest;
 
 class UserController extends Controller
@@ -49,7 +52,7 @@ class UserController extends Controller
     public function store(UserFormRequest $request)
     {
         $this->authorize('create-users');
-        $user = User::create($request->all());
+        $user = User::create(array_merge($request->except('password'), ['password' => bcrypt($request->password)]));
         $user->syncRoles($request->input('roles', []));
 
         return redirect()->route('app.users.index')->with('success', 'User Added');
@@ -63,7 +66,16 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show',['user' => $user]);
+        $securitiesValues = DB::table('securities')->join('commodities', 'securities.commodity_id', '=', 'commodities.id')->where('securities.user_id', '=', $user)->sum(DB::raw('commodities.current_price * securities.security_qty'));
+        $orders = Order::where('user_id', $user->id)->paginate(10);
+        $securities = Security::where('user_id', $user->id)->get();
+        // dd($orders);
+        return view('users.show',[
+            'user' => $user, 
+            'securitiesValues' => $securitiesValues,
+            'orders' => $orders,
+            'securities' => $securities
+         ]);
     }
 
     /**

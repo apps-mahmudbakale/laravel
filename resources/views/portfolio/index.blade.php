@@ -161,17 +161,12 @@
                                                 <div class="form-group">
                                                     Select Bank:
                                                     <select name="bank" class="form-control">
-                                                        <option value="">Select Bank</option>
-                                                        <option value="">Access Bank</option>
-                                                        <option value="">Bank of Africa</option>
-                                                        <option value="">Bank of Baroda</option>
-                                                        <option value="">Bank of India</option>
-                                                        <option value="">Bank of Mauritius</option>
-                                                        <option value="">Bank of Scotland</option>
-                                                        <option value="">Barclays Bank</option>
-                                                        <option value="">Citibank</option>
+                                                        <option value="">Choose Bank...</option>
+                                                       @foreach ($banks as $bank )
+                                                           <option value="{{$bank->id}}">{{$bank->bank_name}}</option>
+                                                       @endforeach
                                                     </select>
-                                                    <p class="float-end"><a href="" id="addBank" data-toggle="modal" data-target="#exampleModal">Add New Bank</a></p>
+                                                    <p class="float-end"><a href="{{route('app.banks.create')}}" >Add New Bank</a></p>
                                                 </div>
                                                 <div class="form-group">
                                                     Enter Login Password:

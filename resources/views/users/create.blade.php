@@ -33,15 +33,6 @@
                                             placeholder="Password">
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label">Occupation</label>
-                                        <select name="occupation" id="occupation" class="form-control">
-                                            <option value="">Choose....</option>
-                                            <option value="Student">Student</option>
-                                            <option value="Entrepreneur">Entrepreneur</option>
-                                            <option value="Employee">Employee</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3 col-md-12">
                                         <label class="form-label" for="inputRole">Role</label>
                                         <select id="inputRole" name="roles[]" class="form-control">
                                             <option selected="">Choose...</option>

@@ -60,12 +60,16 @@ class Order
 
             $amount = $this->commodity->getCurrentPrice($this->model->commodity_id) * $this->model->qty;
 
-            $this->wallet->deductFromWallet($this->model->user_id, $amount);
+            $this->wallet->deductFromWallet($this->model->user_id, $amount, 'Buy Order');
+            $this->model->order_status = 'approved';
+            $this->model->save();
             
         }elseif($this->model->order_type == 'sell'){
 
             $this->wallet = new Wallet();
-            $this->wallet->moveFromLienToWallet($this->model->user_id);
+            $this->wallet->moveFromLienToWallet($this->model->user_id, 'Profit from sall order');
+            $this->model->order_status = 'approved';
+            $this->model->save();
         }
        
 

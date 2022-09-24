@@ -77,7 +77,7 @@
     <img src="{{asset('img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded-circle me-1" alt="{{auth()->user()->firstname." ".auth()->user()->lastname}}" /> <span class="text-dark">{{auth()->user()->firstname." ".auth()->user()->lastname}}</span>
   </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href=""><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+                    <a class="dropdown-item" href="{{route('app.profile', auth()->user()->id)}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">Sign out</a>
                 </div>

@@ -28,16 +28,7 @@
                                         <label class="form-label" for="inputName">Phone</label>
                                         <input type="text" name="phone" class="form-control" value="{{old('phone', isset($user) ? $user->phone : '')}}" id="inputinputName" placeholder="Phone">
                                     </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Occupation</label>
-                                        <select name="occupation" id="occupation" class="form-control">
-                                            <option selected value="{{old('occupation', isset($user) ? $user->occupation : '')}}">{{old('occupation', isset($user) ? $user->occupation : 'Choose....')}}</option>
-                                            <option value="Student">Student</option>
-                                            <option value="Entrepreneur">Entrepreneur</option>
-                                            <option value="Employee">Employee</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
+                                    <div class="mb-3 col-md-12">
                                         <label class="form-label" for="inputRole">Role</label>
                                         <select id="inputRole" name="roles[]" class="form-control">
                                             <option selected="">Choose...</option>
