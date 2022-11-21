@@ -6,7 +6,7 @@ use App\Models\Commodity;
 use Livewire\Component;
 
 class Market extends Base
-{
+{ 
     public $sortBy = 'name';
     public $productId;
     public $action;
