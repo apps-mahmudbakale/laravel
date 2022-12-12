@@ -61,13 +61,13 @@
                 </ul>
             </li>
             @endcan
-            @can('read-updates')
+            {{-- @can('read-updates')
             <li class="sidebar-item {{ request()->routeIs('app.udates.*') ? 'active' : '' }}">
                 <a  href="{{route('app.updates.index')}}" class="sidebar-link">
                     <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Updates</span>
                 </a>
             </li>
-            @endcan
+            @endcan --}}
             <li class="sidebar-item {{ request()->routeIs('app.market.*') ? 'active' : '' }}">
                 <a  href="{{route('app.market.index')}}" class="sidebar-link">
                     <i class="align-middle" data-feather="shopping-cart"></i> <span class="align-middle">Market</span>
