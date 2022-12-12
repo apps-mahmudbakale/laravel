@@ -74,8 +74,8 @@
                 </a>
             </li>
             @role('admin')
-            <li class="sidebar-item {{ request()->routeIs('app.portfolio.*') ? 'active' : '' }}">
-                <a  href="{{route('app.portfolio.index')}}" class="sidebar-link">
+            <li class="sidebar-item {{ request()->routeIs('app.updates.*') ? 'active' : '' }}">
+                <a  href="{{route('app.updates.index')}}" class="sidebar-link">
                     <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">Updates/News</span>
                 </a>
             </li>
