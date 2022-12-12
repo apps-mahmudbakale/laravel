@@ -73,11 +73,19 @@
                     <i class="align-middle" data-feather="shopping-cart"></i> <span class="align-middle">Market</span>
                 </a>
             </li>
+            @role('admin')
+            <li class="sidebar-item {{ request()->routeIs('app.portfolio.*') ? 'active' : '' }}">
+                <a  href="{{route('app.portfolio.index')}}" class="sidebar-link">
+                    <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">Updates/News</span>
+                </a>
+            </li>
+            @else
             <li class="sidebar-item {{ request()->routeIs('app.portfolio.*') ? 'active' : '' }}">
                 <a  href="{{route('app.portfolio.index')}}" class="sidebar-link">
                     <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">Portfolio</span>
                 </a>
             </li>
+            @endrole
         </ul>
     </div>
 </nav>
